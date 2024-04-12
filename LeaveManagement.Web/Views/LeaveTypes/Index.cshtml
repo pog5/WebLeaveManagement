@@ -49,9 +49,8 @@
                 @Html.DisplayFor(modelItem => item.Salary)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-warning">Edit</button></a>
-                    <a asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Details</button></a>
-                @*<a asp-action="Delete" class="btn btn-danger deleteBtn" asp-route-id="@item.Id">Delete</a>*@
+                <a asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-warning">Edit</button></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Details</button></a>
                 <button data-id="@item.Id" class="btn btn-danger deleteBtn" type="button">Delete</button>
             </td>
         </tr>
@@ -63,6 +62,9 @@
     <input type="hidden" id="leaveTypeId" name="Id" />
 </form>
 
+@*
+Този скрипт управлява функционалността за изтриване на запис в изгледа за индексиране на LeaveTypes. Когато бутонът за изтриване бъде натиснат, се показва диалогов прозорец за потвърждение с помощта на библиотеката SweetAlert. Ако потребителят потвърди изтриването, ID на записа се извлича и изпраща на сървъра за изтриване.
+*@
 @section Scripts {
     <script>
         $(function () { 
